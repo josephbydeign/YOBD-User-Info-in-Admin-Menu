@@ -55,6 +55,7 @@ function yobd_user_admin_menu_info() {
             		echo '<li>';
 	            		echo '<a href="' . get_edit_user_link() . '">'; 
 	            			//echo '<img class="admin_user_menu_info_av" src="' . plugins_url( 'assets/blank.jpg', __FILE__ ) . '">';
+	            			//For backwards compatibility with adding class to img see line 46 user_info_in_admin_menu_style.css Path has been added as well as direct class
 	            			echo addslashes( get_avatar( $current_user->ID, 120, '', '', array ('class' => 'admin_user_menu_info_av','force_display' => 'true') ) );
 	            		echo '</a>';
 	            	echo '</li>';
