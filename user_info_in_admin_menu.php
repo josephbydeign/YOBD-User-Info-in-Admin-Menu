@@ -1,14 +1,16 @@
 <?php
 /*
 Plugin Name: User Info in Admin Menu
+Plugin URI: http://yobd.github.io/YOBD-User-Info-in-Admin-Menu/
 Description: Add current user info at the top of the admin menu
-Version: 1.0
-Author: Joseph VanTine
+Version: 1.0.0
+Author: YODB Digital
+Author URI: http://yobd.github.io/YOBD-User-Info-in-Admin-Menu/
 License: GPL3
 */
 
 /*
-Copyright 2015 Joseph VanTine
+Copyright 2015 YODB Digital
  
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 3, as
@@ -24,6 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+
 // Register style sheet.
 
 function yobd_user_admin_menu_info_plugin_styles() {
@@ -32,6 +35,7 @@ function yobd_user_admin_menu_info_plugin_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'yobd_user_admin_menu_info_plugin_styles' );
+
 
 // Do your thing
 
@@ -51,7 +55,7 @@ function yobd_user_admin_menu_info() {
             		echo '<li>';
 	            		echo '<a href="' . get_edit_user_link() . '">'; 
 	            			//echo '<img class="admin_user_menu_info_av" src="' . plugins_url( 'assets/blank.jpg', __FILE__ ) . '">';
-	            			echo addslashes( get_avatar( $current_user->ID, 120, '', '', array ('class' => 'admin_user_menu_info_av') ) );
+	            			echo addslashes( get_avatar( $current_user->ID, 120, '', '', array ('class' => 'admin_user_menu_info_av','force_display' => 'true') ) );
 	            		echo '</a>';
 	            	echo '</li>';
 
